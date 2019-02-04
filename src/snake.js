@@ -7,6 +7,13 @@ moves = {
     "W": [0, -1]
 }
 
+oppositeDirection = {
+    "N": "S", 
+    "E": "W", 
+    "W": "E",
+    "S": "N"
+}
+
 class Snake {
     constructor(board) {
         this.direction = "N";
@@ -69,7 +76,9 @@ class Snake {
     }
 
     turn(newDirection) {
-        this.direction = newDirection;
+        if (this.direction !== oppositeDirection[newDirection]) {
+            this.direction = newDirection;
+        }
     }
 
 }
