@@ -39,7 +39,10 @@ class Snake {
 
     grow() {
         var end = this.segments.slice(-1);
-        var r = end[0]
+        var oppositeDir = moves[this.direction].map(function(x) {x = -x});
+        var r = end[0] + oppositeDir[0];
+        var c = end[1] + oppositeDir[1];
+        this.segments.push([r, c]);
     }
 
     move() {      
@@ -53,7 +56,6 @@ class Snake {
                 var r = seg[0] + moves[this.direction][0];
                 var c = seg[1] + moves[this.direction][1];
                 this.segments[i] = [r, c];
-                console.log(this.eatApple());
                 if (this.eatApple()) {
                     debugger
                     this.board.apple.replace();
