@@ -16,12 +16,6 @@ class Board {
         this.grid = board;
     }
 
-    isOver() {
-        if (this.snake.hitWall()) {
-            alert("You hit a wall");
-            this.gameOver();
-        }
-    }
 }
 
 module.exports = Board;

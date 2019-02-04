@@ -76,7 +76,6 @@ class Snake {
 
     hitWall() {
         var head = this.segments[0];
-        debugger
         if (head[0] > this.board.dim 
             || head[0] < 0
             || head[1] > this.board.dim
@@ -85,6 +84,19 @@ class Snake {
             } else {
                 return false;
             }
+    }
+
+    didHitItself() {
+        var head = this.segments[0];
+        for (var i = 1; i < this.segments.length; i++) {
+            var part = this.segments[i];
+            debugger
+            if (head[0] === part[0] && head[1] === part[1]) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
     turn(newDirection) {

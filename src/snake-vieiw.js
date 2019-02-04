@@ -39,6 +39,11 @@ class View {
             alert("You hit a wall");
             this.gameOver();
         }
+
+        if (this.board.snake.didHitItself()) {
+            alert("Snake hit itself");
+            this.gameOver();
+        }
     }
 
     render() {
