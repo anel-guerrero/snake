@@ -10,7 +10,7 @@ moves = {
 class Snake {
     constructor(board) {
         this.direction = "N";
-        this.segments = [[14, 14], [15, 14] ];
+        this.segments = [[14, 14], [15, 14]];
         this.board = board;
     }
 
@@ -26,10 +26,10 @@ class Snake {
     }
 
     eatApple() {
-        debugger
         var head = this.segments[0];
         var apple = this.board.apple.position;
-        if (head[0] === apple[0] && head[1 === apple[1]]) {
+        head = Array.from(head);
+        if (head[0] === apple[0][0] && head[1] === apple[0][1]) {
             return true;
         } else {
             return false;
@@ -53,7 +53,7 @@ class Snake {
                 var r = seg[0] + moves[this.direction][0];
                 var c = seg[1] + moves[this.direction][1];
                 this.segments[i] = [r, c];
-
+                console.log(this.eatApple());
                 if (this.eatApple()) {
                     debugger
                     this.board.apple.replace();
