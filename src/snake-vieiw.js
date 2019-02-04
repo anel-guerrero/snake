@@ -14,7 +14,12 @@ class View {
         this.board = new Board(dim);
         $(window).on("keydown", this.handleKeyEvent.bind(this));
         this.setUpGrid();
-        var interval = setInterval(this.step.bind(this), 500);
+        this.interval = setInterval(this.step.bind(this), 200);
+    }
+
+
+    gameOver() {
+        clearInterval(this.interval);
     }
     
     handleKeyEvent(event) {
@@ -25,7 +30,15 @@ class View {
     
     step() {
         this.board.snake.move();
+        this.isOver();
         this.render();
+    }
+
+    isOver() {
+        if (this.board.snake.hitWall()) {
+            alert("You hit a wall");
+            this.gameOver();
+        }
     }
 
     render() {

@@ -64,7 +64,6 @@ class Snake {
                 var c = seg[1] + moves[this.direction][1];
                 this.segments[i] = [r, c];
                 if (this.eatApple()) {
-                    debugger
                     this.board.apple.replace();
                     this.grow();
                 }
@@ -73,6 +72,19 @@ class Snake {
                 positionAhead = currentPosition;
             }
         }
+    }
+
+    hitWall() {
+        var head = this.segments[0];
+        debugger
+        if (head[0] > this.board.dim 
+            || head[0] < 0
+            || head[1] > this.board.dim
+            || head[1] < 0) {
+                return true;
+            } else {
+                return false;
+            }
     }
 
     turn(newDirection) {
