@@ -14,7 +14,7 @@ class View {
         this.board = new Board(dim);
         $(window).on("keydown", this.handleKeyEvent.bind(this));
         this.setUpGrid();
-        var interval = setInterval(this.step.bind(this), 1000);
+        var interval = setInterval(this.step.bind(this), 500);
     }
     
     handleKeyEvent(event) {

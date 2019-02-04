@@ -26,6 +26,7 @@ class Snake {
     }
 
     eatApple() {
+        debugger
         var head = this.segments[0];
         var apple = this.board.apple.position;
         if (head[0] === apple[0] && head[1 === apple[1]]) {
@@ -54,6 +55,7 @@ class Snake {
                 this.segments[i] = [r, c];
 
                 if (this.eatApple()) {
+                    debugger
                     this.board.apple.replace();
                     this.grow();
                 }
