@@ -90,13 +90,11 @@ class Snake {
         var head = this.segments[0];
         for (var i = 1; i < this.segments.length; i++) {
             var part = this.segments[i];
-            debugger
             if (head[0] === part[0] && head[1] === part[1]) {
                 return true;
-            } else {
-                return false;
-            }
+            } 
         }
+        return false;
     }
 
     turn(newDirection) {
