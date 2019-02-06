@@ -20,6 +20,7 @@ class View {
 
     gameOver() {
         clearInterval(this.interval);
+        window.parent.postMessage("game over", "*");
     }
     
     handleKeyEvent(event) {
