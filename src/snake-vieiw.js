@@ -32,7 +32,7 @@ class View {
         }
 
         if (e.data === "play again") {
-            if (this.gameOver) {
+            if (this.gameOverFlag) {
                 this.gameOverFlag = false;
                 window.parent.postMessage("play again", "*");
                 this.board.snake.segments = [
