@@ -37,6 +37,7 @@ class Snake {
         var apple = this.board.apple.position;
         head = Array.from(head);
         if (head[0] === apple[0][0] && head[1] === apple[0][1]) {
+            window.parent.postMessage("ateApple", "*");
             return true;
         } else {
             return false;
