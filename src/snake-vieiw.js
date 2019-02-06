@@ -10,7 +10,7 @@ keyCodes = {
 class View {
     constructor(el) {
         this.$el = $(el);
-        var dim = 30;
+        var dim = 20;
         this.board = new Board(dim);
         $(window).on("keydown", this.handleKeyEvent.bind(this));
         this.setUpGrid();
@@ -32,6 +32,9 @@ class View {
         this.board.snake.move();
         this.isOver();
         this.render();
+        console.log("window.parent ", window.parent);
+        debugger
+        window.parent.postMessage("another move", "*");
     }
 
     isOver() {
