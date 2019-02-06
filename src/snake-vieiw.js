@@ -46,6 +46,7 @@ class View {
 
     gameOver() {
         clearInterval(this.interval);
+        this.gameOver = true;
         window.parent.postMessage("game over", "*");
     }
     
