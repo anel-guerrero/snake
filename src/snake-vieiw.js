@@ -33,7 +33,6 @@ class View {
         this.isOver();
         this.render();
         console.log("window.parent ", window.parent);
-        debugger
         window.parent.postMessage("another move", "*");
     }
 
