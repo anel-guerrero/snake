@@ -33,6 +33,7 @@ class View {
 
         if (e.data === "play again") {
             if (this.gameOver) {
+                this.gameOver = false;
                 window.parent.postMessage("play again", "*");
                 this.board.snake.segments = [
                     [14, 14],
