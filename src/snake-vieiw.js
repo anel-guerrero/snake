@@ -12,11 +12,28 @@ class View {
         this.$el = $(el);
         var dim = 20;
         this.board = new Board(dim);
+        this.pause = false;
         $(window).on("keydown", this.handleKeyEvent.bind(this));
         this.setUpGrid();
         this.interval = setInterval(this.step.bind(this), 200);
+        window.addEventListener('message', handlePostMessage);
     }
 
+    handlePostMessage(e) {
+        if (e.data === "pause") {
+            if (this.pause) {
+                this.pause = false;
+                this.interval = setInterval(this.step.bind(this), 200);
+            } else {
+                this.pause = true;
+                clearInterval(this.interval);
+            }
+        }
+
+        if (e.data === "play again") {
+
+        }
+    }
 
     gameOver() {
         clearInterval(this.interval);
@@ -38,13 +55,11 @@ class View {
     isOver() {
         if (this.board.snake.hitWall()) {
             window.parent.postMessage("snake hit a wall", "*");
-            // alert("You hit a wall");
             this.gameOver();
         }
 
         if (this.board.snake.didHitItself()) {
             window.parent.postMessage("snake hit itself", "*");
-            // alert("Snake hit itself");
             this.gameOver();
         }
     }
