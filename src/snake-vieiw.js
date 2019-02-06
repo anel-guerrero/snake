@@ -35,6 +35,7 @@ class View {
             if (this.gameOverFlag) {
                 this.gameOverFlag = false;
                 window.parent.postMessage("play again", "*");
+                this.board.snake.direction = "N";
                 this.board.snake.segments = [
                     [14, 14],
                     [15, 14]
