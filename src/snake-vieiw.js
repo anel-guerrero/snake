@@ -16,7 +16,7 @@ class View {
         $(window).on("keydown", this.handleKeyEvent.bind(this));
         this.setUpGrid();
         this.interval = setInterval(this.step.bind(this), 200);
-        window.addEventListener('message', handlePostMessage);
+        window.addEventListener('message', this.handlePostMessage.bind(this));
     }
 
     handlePostMessage(e) {
