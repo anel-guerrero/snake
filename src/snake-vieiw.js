@@ -10,7 +10,7 @@ keyCodes = {
 class View {
     constructor(el) {
         this.$el = $(el);
-        var dim = 20;
+        var dim = 30;
         this.board = new Board(dim);
         this.pause = false;
         this.gameOverFlag = false;
