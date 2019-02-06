@@ -32,18 +32,18 @@ class View {
         this.board.snake.move();
         this.isOver();
         this.render();
-        console.log("window.parent ", window.parent);
-        window.parent.postMessage("another move", "*");
     }
 
     isOver() {
         if (this.board.snake.hitWall()) {
-            alert("You hit a wall");
+            window.parent.postMessage("snake hit a wall", "*");
+            // alert("You hit a wall");
             this.gameOver();
         }
 
         if (this.board.snake.didHitItself()) {
-            alert("Snake hit itself");
+            window.parent.postMessage("snake hit itself", "*");
+            // alert("Snake hit itself");
             this.gameOver();
         }
     }
