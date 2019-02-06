@@ -13,7 +13,7 @@ class View {
         var dim = 20;
         this.board = new Board(dim);
         this.pause = false;
-        this.gameOver = false;
+        this.gameOverFlag = false;
         $(window).on("keydown", this.handleKeyEvent.bind(this));
         this.setUpGrid();
         this.interval = setInterval(this.step.bind(this), 200);
@@ -33,7 +33,7 @@ class View {
 
         if (e.data === "play again") {
             if (this.gameOver) {
-                this.gameOver = false;
+                this.gameOverFlag = false;
                 window.parent.postMessage("play again", "*");
                 this.board.snake.segments = [
                     [14, 14],
@@ -47,7 +47,7 @@ class View {
 
     gameOver() {
         clearInterval(this.interval);
-        this.gameOver = true;
+        this.gameOverFlag = true;
         window.parent.postMessage("game over", "*");
     }
     
