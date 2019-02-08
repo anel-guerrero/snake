@@ -47,7 +47,7 @@ li {
 }
 
 .apple {
-    background: red;
+    /* background: red; */
     background-image: url(../images/sprite_0.png);
     border-radius: 15px;
 }
