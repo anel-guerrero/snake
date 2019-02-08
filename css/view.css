@@ -49,6 +49,12 @@ li {
 .apple {
     /* background: red; */
     background-image: url(../images/sprite_0.png);
+     background-size: cover;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+     height: 100%;
     border-radius: 15px;
 }
 
