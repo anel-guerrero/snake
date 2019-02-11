@@ -48,7 +48,7 @@ li {
     height: 3%;
     */
     padding-bottom: minmax(10px, 1fr);
-    border: 1px solid #DCDCDC;
+    border: 1px dotted #ACBF55;
 }
 
 .apple {
