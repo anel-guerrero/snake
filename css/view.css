@@ -41,9 +41,9 @@ ul:after {
 
 li {
     float: left;
-    width: 20px;
-    height: 20px;
-    border: 1px solid grey;
+    width: 3%;
+    height: 3%;
+    border: 1px solid #DCDCDC;
 }
 
 .apple {
