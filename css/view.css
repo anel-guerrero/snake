@@ -11,23 +11,11 @@ h1 {
     text-align: inherit;
 }
 
-/* ul {
-    list-style: none;
-} */
-
 body {
     font-family: sans-serif;
     text-align: center;
     font-weight: bold;
 }
-
-/* ul:after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
-*/
 
 .container {
     display: grid;
@@ -43,16 +31,11 @@ ul {
 }
 
 li {
-    /* float: left;
-    width: 3%;
-    height: 3%;
-    */
     padding-bottom: minmax(10px, 1fr);
     border: 1px dotted #ACBF55;
 }
 
 .apple {
-    /* background: red; */
     background-image: url(../images/sprite_0.png);
      background-size: cover;
      -webkit-background-size: cover;

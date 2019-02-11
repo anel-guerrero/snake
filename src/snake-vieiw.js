@@ -32,7 +32,7 @@ class View {
         }
 
         if (e.data === "play again") {
-            if (this.gameOverFlag) {
+            // if (this.gameOverFlag) {
                 this.gameOverFlag = false;
                 window.parent.postMessage("play again", "*");
                 this.board.snake.direction = "N";
@@ -41,7 +41,7 @@ class View {
                     [15, 14]
                 ];
                 this.interval = setInterval(this.step.bind(this), 200);
-            }
+            // }
 
         }
     }
