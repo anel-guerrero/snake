@@ -149,7 +149,7 @@ eval("const Snake = __webpack_require__(/*! ./snake.js */ \"./src/snake.js\");\n
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n\nconst View = __webpack_require__(/*! ./snake-vieiw */ \"./src/snake-vieiw.js\");\n\nvar el = $('<div></div>')[0];\ndocument.body.appendChild(el);\nvar view = new View(el);\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n\nconst View = __webpack_require__(/*! ./snake-vieiw */ \"./src/snake-vieiw.js\");\n\nvar $el = $('<div></div>');\n$el.addClass('container');\nvar el = $el[0];\ndocument.body.appendChild(el);\nvar view = new View(el);\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
