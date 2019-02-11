@@ -16,7 +16,7 @@ class View {
         this.gameOverFlag = false;
         $(window).on("keydown", this.handleKeyEvent.bind(this));
         this.setUpGrid();
-        this.interval = setInterval(this.step.bind(this), 200);
+        // this.interval = setInterval(this.step.bind(this), 200);
         window.addEventListener('message', this.handlePostMessage.bind(this));
     }
 
