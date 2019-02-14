@@ -24,7 +24,8 @@ class View {
         if (e.data === "pause") {
             if (this.pause) {
                 this.pause = false;
-                this.interval = setInterval(this.step.bind(this), 200);
+                var that = this;
+                this.interval = setInterval(this.step.bind(that), 200);
                 console.log("interval now is ", this.interval);
             } else {
                 this.pause = true;
