@@ -19,6 +19,7 @@ class Snake {
         this.direction = "N";
         this.segments = [[14, 14], [15, 14]];
         this.board = board;
+        this.turns = 0;
     }
 
     isOccupying(pos) {
@@ -101,6 +102,7 @@ class Snake {
     turn(newDirection) {
         if (this.direction !== oppositeDirection[newDirection]) {
             this.direction = newDirection;
+            this.turns++;
         }
     }
 

@@ -6,6 +6,7 @@ class Board {
         this.dim = dim;
         this.snake = new Snake(this);
         this.apple = new Apple(this);
+        this.turnCount = 0;
     }
 
     build() {
@@ -14,6 +15,13 @@ class Board {
             row = Array[dim];
         });
         this.grid = board;
+    }
+
+    addBlocks() {
+        
+        if (this.snake.turns % 7 === 0 && this.snake.turns !== 0 && this.snake.turns !== this.turnCount) {
+            this.turnCount = this.snake.turns;
+        }
     }
 
 }
