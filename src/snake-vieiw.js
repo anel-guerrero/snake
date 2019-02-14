@@ -26,11 +26,11 @@ class View {
                 this.pause = false;
                 var that = this;
                 this.interval = setInterval(this.step.bind(that), 200);
-                console.log("interval now is ", this.interval);
+                console.log("on pause setting interval now is ", this.interval);
             } else {
                 this.pause = true;
                 clearInterval(this.interval);
-                console.log("interval now is ", this.interval);
+                console.log("on pause clearing interval now is ", this.interval);
             }
         }
 
@@ -43,8 +43,8 @@ class View {
                     [14, 14],
                     [15, 14]
                 ];
-                console.log("interval now is ", this.interval);
                 this.interval = setInterval(this.step.bind(this), 200);
+                console.log("on play setting interval now is ", this.interval);
             // }
 
         }
@@ -52,6 +52,7 @@ class View {
 
     gameOver() {
         clearInterval(this.interval);
+        console.log("on game over clearing interval is ", this.interval);
         this.gameOverFlag = true;
         window.parent.postMessage("game over", "*");
     }
