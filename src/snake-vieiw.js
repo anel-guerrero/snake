@@ -48,6 +48,10 @@ class View {
             // }
 
         }
+
+        if (e.data === "game over") {
+            this.gameOver();
+        }
     }
 
     gameOver() {
