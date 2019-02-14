@@ -51,7 +51,6 @@ class View {
 
     gameOver() {
         clearInterval(this.interval);
-        console.log("interval now is ", this.interval);
         this.gameOverFlag = true;
         window.parent.postMessage("game over", "*");
     }
@@ -70,12 +69,10 @@ class View {
 
     isOver() {
         if (this.board.snake.hitWall()) {
-            window.parent.postMessage("snake hit a wall", "*");
             this.gameOver();
         }
 
         if (this.board.snake.didHitItself()) {
-            window.parent.postMessage("snake hit itself", "*");
             this.gameOver();
         }
     }
